@@ -33,4 +33,20 @@ function modeSwitcher() {
     }
 }
 
-// 
+// Calculator
+
+const numberButtons = document.querySelectorAll('[data-number]')
+const operatorButtons = document.querySelectorAll('[data-operator]')
+const currentOperationScreen = document.getElementById('currentOperationScreen')
+
+numberButtons.forEach((button) =>
+    button.addEventListener('click', () => appendNumber(button.textContent))
+)
+
+function appendNumber(number) {
+    if (currentOperationScreen.textContent === '0') {
+        currentOperationScreen.textContent = ''
+    }
+
+    currentOperationScreen.textContent += number;
+}
