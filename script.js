@@ -77,10 +77,11 @@ function clear() {
 
 // Delete
 function deleteNumber() {
-    currentOperationScreen.textContent = currentOperationScreen.textContent.slice(0, -1)
-
-    if (currentOperationScreen.textContent < '10') {
+    if (currentOperationScreen.textContent < 10) {
         currentOperationScreen.textContent = '0'
+    }
+    if (currentOperationScreen.textContent >= 10) {
+        currentOperationScreen.textContent = currentOperationScreen.textContent.slice(0, -1)
     }
 }
 
@@ -90,12 +91,16 @@ function evaluate(operator) {
         currentOperation = operator;
         firstOperand = currentOperationScreen.textContent;
         currentOperationScreen.textContent = '0';
+        lastOperationScreen.textContent = `${firstOperand} ${currentOperation}`
     } else {
         secondOperand = currentOperationScreen.textContent;
         currentOperationScreen.textContent = operate(currentOperation, firstOperand, secondOperand)
+        lastOperationScreen.textContent = `${firstOperand} ${currentOperation} ${secondOperand}`
+        firstOperand = ''
+        secondOperand = ''
     }
 
-    lastOperationScreen.textContent = `${firstOperand} ${currentOperation} ${secondOperand}`
+
 }
 
 function operate(operator, a, b) {
@@ -104,11 +109,11 @@ function operate(operator, a, b) {
     switch (operator) {
         case '+':
             return add(a, b)
-        case '-':
+        case '−':
             return subtract(a, b)
         case '×':
             return multiply(a, b)
-        case '%':
+        case '÷':
             return divide(a, b)
     }
 }
@@ -117,7 +122,7 @@ function add(a, b) {
     return a + b
 }
 
-function substract(a, b) {
+function subtract(a, b) {
     return a - b
 }
 
