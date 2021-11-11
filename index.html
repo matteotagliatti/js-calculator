@@ -16,17 +16,15 @@
                 <button><i id="toggleDarkTheme" class="icon active gg-moon"></i></button>
             </div>
             <div class="operation">
-                <p>308</p>
-                <p class="red">x</p>
-                <p>42</p>
+                <p id="lastOperationScreen">0</p>
             </div>
             <div class="result">
                 <h1 id="currentOperationScreen">0</h1>
             </div>
         </div>
         <div class="buttons">
-            <button class="span2 blue">Clear</button>
-            <button class="span2 blue">Delete</button>
+            <button id="clearBtn" class="span2 blue">Clear</button>
+            <button id="deleteBtn" class="span2 blue">Delete</button>
             <button data-number>7</button>
             <button data-number>8</button>
             <button data-number>9</button>
@@ -41,7 +39,7 @@
             <button class="red" data-operator>−</button>
             <button>.</button>
             <button data-number>0</button>
-            <button class="blue">=</button>
+            <button id="equalBtn" class="blue">=</button>
             <button class="red" data-operator>+</button>
         </div>
     </div>
