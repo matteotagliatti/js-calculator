@@ -45,11 +45,9 @@ const currentOperationScreen = document.getElementById('currentOperationScreen')
 const lastOperationScreen = document.getElementById('lastOperationScreen')
 const clearButton = document.getElementById('clearBtn')
 const deleteButton = document.getElementById('deleteBtn')
-const equalBtn = document.getElementById('equalBtn')
 
 clearButton.addEventListener('click', clear);
 deleteButton.addEventListener('click', deleteNumber);
-equalBtn.addEventListener('click', evaluate);
 
 numberButtons.forEach((button) =>
     button.addEventListener('click', () => appendNumber(button.textContent))
@@ -71,8 +69,7 @@ function appendNumber(number) {
 function clear() {
     currentOperationScreen.textContent = '0'
     lastOperationScreen.textContent = '0'
-    firstOperand = ''
-    secondOperand = ''
+    resetOperand()
 }
 
 // Delete
@@ -88,19 +85,30 @@ function deleteNumber() {
 // Evaluate
 function evaluate(operator) {
     if (firstOperand === '') {
+        if (operator === '=') return // remove error when press =
         currentOperation = operator;
         firstOperand = currentOperationScreen.textContent;
         currentOperationScreen.textContent = '0';
         lastOperationScreen.textContent = `${firstOperand} ${currentOperation}`
     } else {
+        if (currentOperation === '÷' && currentOperationScreen.textContent === '0') {
+            alert("You can't divide by 0")
+            return
+        }
         secondOperand = currentOperationScreen.textContent;
-        currentOperationScreen.textContent = operate(currentOperation, firstOperand, secondOperand)
+        currentOperationScreen.textContent = roundResult(operate(currentOperation, firstOperand, secondOperand))
         lastOperationScreen.textContent = `${firstOperand} ${currentOperation} ${secondOperand}`
-        firstOperand = ''
-        secondOperand = ''
+        resetOperand()
     }
+}
 
+function resetOperand() {
+    firstOperand = ''
+    secondOperand = ''
+}
 
+function roundResult(number) {
+    return Math.round(number * 1000) / 1000 // 3 decimals
 }
 
 function operate(operator, a, b) {
