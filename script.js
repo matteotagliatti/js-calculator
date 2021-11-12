@@ -45,9 +45,12 @@ const currentOperationScreen = document.getElementById('currentOperationScreen')
 const lastOperationScreen = document.getElementById('lastOperationScreen')
 const clearButton = document.getElementById('clearBtn')
 const deleteButton = document.getElementById('deleteBtn')
+const pointButton = document.getElementById('pointButton')
 
 clearButton.addEventListener('click', clear);
 deleteButton.addEventListener('click', deleteNumber);
+pointButton.addEventListener('click', appendPoint); // point button
+window.addEventListener('keydown', handleKeyboardInput) // keyboard support
 
 numberButtons.forEach((button) =>
     button.addEventListener('click', () => appendNumber(button.textContent))
@@ -140,4 +143,28 @@ function multiply(a, b) {
 
 function divide(a, b) {
     return a / b
+}
+
+// Point Button
+function appendPoint() {
+    if (currentOperationScreen.textContent.includes('.')) return
+    currentOperationScreen.textContent += '.'
+}
+
+// Keyboard Support
+function handleKeyboardInput(e) {
+    if (e.key >= 0 && e.key <= 9) appendNumber(e.key)
+    if (e.key === '.') appendPoint()
+    if (e.key === 'Backspace') deleteNumber()
+    if (e.key === 'Escape') clear()
+    if (e.key === '+' || e.key === '-' || e.key === '*' || e.key === '/' || e.key === 'Enter')
+        evaluate(convertOperator(e.key))
+}
+
+function convertOperator(keyboardOperator) {
+    if (keyboardOperator === '/') return '÷'
+    if (keyboardOperator === '*') return '×'
+    if (keyboardOperator === '-') return '−'
+    if (keyboardOperator === '+') return '+'
+    if (keyboardOperator === 'Enter') return '='
 }
