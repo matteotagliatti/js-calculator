@@ -1,249 +1,245 @@
 /* Themes */
 
 html[data-theme="dark"] {
-    --body-color: #FFFFFF;
-    --background-color: #22252D;
-    --background-color-secondary: #292D36;
-    --text-color: #FFFFFF;
+  --body-color: #ffffff;
+  --background-color: #22252d;
+  --background-color-secondary: #292d36;
+  --text-color: #ffffff;
 }
 
 html[data-theme="light"] {
-    --body-color: #292D36;
-    --background-color: #FFFFFF;
-    --background-color-secondary: #F9F9F9;
-    --text-color: #292D36;
+  --body-color: #292d36;
+  --background-color: #ffffff;
+  --background-color-secondary: #f9f9f9;
+  --text-color: #292d36;
 }
 
 /* Global */
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 :root {
-    --red: #EA6666;
-    --light-blue: #26EBC7;
+  --red: #ea6666;
+  --light-blue: #26ebc7;
 }
 
-@import url('https://rsms.me/inter/inter.css');
+@import url("https://rsms.me/inter/inter.css");
 
-html {font-size: 100%;}
-h1 {font-size: 3rem; margin: 1rem 0 0 0;}
-p {color:var(--background-color); font-size: 1.2rem; margin: 0;}
-a {color: var(--background-color)}
+html {
+  font-size: 100%;
+}
+h1 {
+  font-size: 3rem;
+  margin: 1rem 0 0 0;
+}
+p {
+  color: var(--background-color);
+  font-size: 1.2rem;
+  margin: 0;
+}
+a {
+  color: var(--background-color);
+}
 
 body {
-    background-color: var(--body-color);
-    color: var(--text-color);
-    font-family: 'Inter', sans-serif;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: space-around;
+  background-color: var(--body-color);
+  color: var(--text-color);
+  font-family: "Inter", sans-serif;
+  padding: 2rem 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 button {
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
 }
 
 /* Container & Screen */
 
 .container {
-    height: fit-content;
-    background-color: var(--background-color);
-    border-radius: 25px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  height: fit-content;
+  background-color: var(--background-color);
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
 .screen {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
 }
 
 .screen p {
-    color: var(--text-color);
+  color: var(--text-color);
 }
 
 .screen p.red {
-    color: var(--red);
+  color: var(--red);
 }
 
 /* Icons */
 
 .icons {
-    background-color: var(--background-color-secondary);
-    padding: 10px;
-    border-radius: 10px;
-    gap: 10px;
-    display: flex;
-    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  background-color: var(--background-color-secondary);
+  padding: 10px;
+  border-radius: 10px;
+  gap: 10px;
+  display: flex;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
 .icon {
-    color: var(--text-color);
-    opacity: 0.3;
+  color: var(--text-color);
+  opacity: 0.3;
 }
 
 .icon.active {
-    opacity: 1;
+  opacity: 1;
 }
 
 /* Theme Toggle */
 
 .gg-moon,
 .gg-moon::after {
-    display: block;
-    box-sizing: border-box;
-    border-radius: 50%
+  display: block;
+  box-sizing: border-box;
+  border-radius: 50%;
 }
 .gg-moon {
-    overflow: hidden;
-    position: relative;
-    transform: rotate(-135deg) scale(var(--ggs,1));
-    width: 20px;
-    height: 20px;
-    border: 2px solid;
-    border-bottom-color: transparent
+  overflow: hidden;
+  position: relative;
+  transform: rotate(-135deg) scale(var(--ggs, 1));
+  width: 20px;
+  height: 20px;
+  border: 2px solid;
+  border-bottom-color: transparent;
 }
 .gg-moon::after {
-    content: "";
-    position: absolute;
-    width: 12px;
-    height: 18px;
-    border: 2px solid transparent;
-    box-shadow: 0 0 0 2px;
-    top: 8px;
-    left: 2px
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 18px;
+  border: 2px solid transparent;
+  box-shadow: 0 0 0 2px;
+  top: 8px;
+  left: 2px;
 }
 
 .gg-sun {
-    box-sizing: border-box;
-    position: relative;
-    display: block;
-    transform: scale(var(--ggs,1));
-    width: 24px;
-    height: 24px;
-    background:
-    linear-gradient(to bottom,
-    currentColor 4px,transparent 0)
-    no-repeat 5px -6px/2px 6px,
-    linear-gradient(to bottom,
-    currentColor 4px,transparent 0)
-    no-repeat 5px 14px/2px 6px,
-    linear-gradient(to bottom,
-    currentColor 4px,transparent 0)
-    no-repeat -8px 5px/6px 2px,
-    linear-gradient(to bottom,
-    currentColor 4px,transparent 0)
-    no-repeat 14px 5px/6px 2px;
-    border-radius: 100px;
-    box-shadow: inset 0 0 0 2px;
-    border: 6px solid transparent
-   }
-   
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  transform: scale(var(--ggs, 1));
+  width: 24px;
+  height: 24px;
+  background: linear-gradient(to bottom, currentColor 4px, transparent 0)
+      no-repeat 5px -6px/2px 6px,
+    linear-gradient(to bottom, currentColor 4px, transparent 0) no-repeat 5px
+      14px/2px 6px,
+    linear-gradient(to bottom, currentColor 4px, transparent 0) no-repeat -8px 5px/6px
+      2px,
+    linear-gradient(to bottom, currentColor 4px, transparent 0) no-repeat 14px
+      5px/6px 2px;
+  border-radius: 100px;
+  box-shadow: inset 0 0 0 2px;
+  border: 6px solid transparent;
+}
+
 .gg-sun::after,
 .gg-sun::before {
-    content: "";
-    display: block;
-    box-sizing: border-box;
-    position: absolute;
-    width: 24px;
-    height: 2px;
-    border-right: 4px solid;
-    border-left: 4px solid;
-    left: -6px;
-    top: 5px
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  border-right: 4px solid;
+  border-left: 4px solid;
+  left: -6px;
+  top: 5px;
 }
-   
+
 .gg-sun::before {
-    transform: rotate(-45deg)
+  transform: rotate(-45deg);
 }
 
 .gg-sun::after {
-    transform: rotate(45deg)
-} 
+  transform: rotate(45deg);
+}
 
 /* Operation */
 
 .operation {
-    align-self: flex-end;
-    display: flex;
-    margin-top: 5rem;
-    gap: 5px;
+  align-self: flex-end;
+  display: flex;
+  margin-top: 5rem;
+  gap: 5px;
 }
 
 .result {
-    align-self: flex-end;
+  align-self: flex-end;
 }
 
 /* Buttons */
 
 .buttons {
-    background-color: var(--background-color-secondary);
-    border-radius: 25px;
-    padding: 20px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-    grid-gap: 10px;
+  background-color: var(--background-color-secondary);
+  border-radius: 25px;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
 }
 
 .buttons button {
-    background-color: var(--background-color);
-    color: var(--text-color);
-    border-radius: 25px;
-    width: 80px;
-    height: 80px;
-    font-size: 1.3rem;
-    font-weight: 400;
-    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  border-radius: 25px;
+  width: 80px;
+  height: 80px;
+  font-size: 1.3rem;
+  font-weight: 400;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
 .buttons button:active {
-    filter: brightness(90%);
+  filter: brightness(90%);
 }
 
 .buttons button.span2 {
-    grid-column: span 2;
-    width: 100%;
+  grid-column: span 2;
+  width: 100%;
 }
 
 .buttons button.red {
-    color: var(--red);
+  color: var(--red);
 }
 
 .buttons button.blue {
-    color: var(--light-blue);
-}
-
-/* Footer */
-
-footer {
-    text-align: center;
+  color: var(--light-blue);
 }
 
 /* Mobile */
 
 @media only screen and (max-width: 768px) {
-    .operation {
-        margin-top: 2rem;
-    }
-
-    .buttons button {
-      width: 70px;
-      height: 70px;
-    }
-
-    footer p {
-        font-size: 12px;
-    }
+  .operation {
+    margin-top: 2rem;
   }
+
+  .buttons button {
+    width: 70px;
+    height: 70px;
+  }
+}

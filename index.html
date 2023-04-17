@@ -1,53 +1,51 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculator</title>
 
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <div class="container">
-        <div class="screen">
-            <div class="icons">
-                <button><i id="toggleLightTheme" class="icon gg-sun"></i></button>
-                <button><i id="toggleDarkTheme" class="icon active gg-moon"></i></button>
-            </div>
-            <div class="operation">
-                <p id="lastOperationScreen">0</p>
-            </div>
-            <div class="result">
-                <h1 id="currentOperationScreen">0</h1>
-            </div>
+      <div class="screen">
+        <div class="icons">
+          <button><i id="toggleLightTheme" class="icon gg-sun"></i></button>
+          <button>
+            <i id="toggleDarkTheme" class="icon active gg-moon"></i>
+          </button>
         </div>
-        <div class="buttons">
-            <button id="clearBtn" class="span2 blue">Clear</button>
-            <button id="deleteBtn" class="span2 blue">Delete</button>
-            <button data-number>7</button>
-            <button data-number>8</button>
-            <button data-number>9</button>
-            <button class="red" data-operator>÷</button>
-            <button data-number>4</button>
-            <button data-number>5</button>
-            <button data-number>6</button>
-            <button class="red" data-operator>×</button>
-            <button data-number>1</button>
-            <button data-number>2</button>
-            <button data-number>3</button>
-            <button class="red" data-operator>−</button>
-            <button id="pointButton">.</button>
-            <button data-number>0</button>
-            <button id="equalBtn" class="blue" data-operator>=</button>
-            <button class="red" data-operator>+</button>
+        <div class="operation">
+          <p id="lastOperationScreen">0</p>
         </div>
+        <div class="result">
+          <h1 id="currentOperationScreen">0</h1>
+        </div>
+      </div>
+      <div class="buttons">
+        <button id="clearBtn" class="span2 blue">Clear</button>
+        <button id="deleteBtn" class="span2 blue">Delete</button>
+        <button data-number>7</button>
+        <button data-number>8</button>
+        <button data-number>9</button>
+        <button class="red" data-operator>÷</button>
+        <button data-number>4</button>
+        <button data-number>5</button>
+        <button data-number>6</button>
+        <button class="red" data-operator>×</button>
+        <button data-number>1</button>
+        <button data-number>2</button>
+        <button data-number>3</button>
+        <button class="red" data-operator>−</button>
+        <button id="pointButton">.</button>
+        <button data-number>0</button>
+        <button id="equalBtn" class="blue" data-operator>=</button>
+        <button class="red" data-operator>+</button>
+      </div>
     </div>
 
-    <footer>
-        <p>Made by <a href="https://github.com/matteotagliatti/">Matteo Tagliatti</a> for <a href="https://theodinproject.com/">The Odin Project</a> curriculum</p>
-        </footer>
-
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
